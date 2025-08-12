@@ -9,3 +9,6 @@ wheels/
 .env
 # Virtual environments
 .venv
+
+# Test files with sensitive data
+manual_test.py
