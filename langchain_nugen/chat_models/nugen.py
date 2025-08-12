@@ -14,7 +14,7 @@ from langchain_core.messages import (
     SystemMessage,
 )
 from langchain_core.outputs import ChatGeneration, ChatGenerationChunk, ChatResult
-from pydantic import Field, SecretStr, model_validator
+from pydantic import Field, SecretStr, root_validator
 from langchain_core.utils import get_from_dict_or_env
 
 
@@ -52,7 +52,7 @@ class ChatNugen(BaseChatModel):
         "arbitrary_types_allowed": True
     }
         
-    @model_validator(mode='before')
+    @root_validator(pre=True)
     @classmethod
     def validate_environment(cls, values: Dict) -> Dict:
         """Validate environment variables and configuration."""

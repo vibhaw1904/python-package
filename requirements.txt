@@ -1,0 +1,6 @@
+langchain
+langgraph
+ipykernel
+langchain-anthropic
+langchain-core
+streamlit
